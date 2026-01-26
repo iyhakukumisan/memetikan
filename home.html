@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MemeTikan - Bahay</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Roboto", Georgia, Serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("images/1.jpg");
+  min-height: 100%;
+}
+
+.menu {
+  display: none;
+}
+
+
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-sand">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block">BAHAY</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#memetikan" class="w3-button w3-block ">ANG MEMETIKAN</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#nilalaman" class="w3-button w3-block ">NILALAMAN</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#teorya" class="w3-button w3-block">TEORYA</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container" id="home">
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-large">
+
+<!-- Ang memetikan -->
+<div class="w3-container" id="memetikan">
+     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ANG MEMETIKAN: Mundo ng Meme at Panitikan</span></h5>
+ <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/covermeme.JPG" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/pagdating.png" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/tungkol.png" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+    
+  </div>
+  
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+
+
+
+</div>
+
+<!-- Nilalaman Container -->
+<div class="w3-container w3-padding-64" id="nilalaman">
+  <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">NILALAMAN</span></h5>
+				
+		<div class="w3-col l6 w3-padding-large">
+			  <img src="images/meme3.JPG" class="w3-round w3-image" alt="Nilalaman" width="600" height="300">
+		</div>
+		
+		<div class="w3-col l6 w3-padding-large">
+                    <div class="w3-row w3-center w3-card w3-padding">
+                            <a href="javascript:void(0)" onclick="openMenu(event, 'medi');" id="myLink">
+                                <div class="w3-col s4 tablink">Mediterranean</div>
+                            </a>
+                            <a href="javascript:void(0)" onclick="openMenu(event, 'Kanluranin');">
+                                <div class="w3-col s4 tablink">Bansang Kanluranin</div>
+                             </a>
+
+                              <a href="javascript:void(0)" onclick="openMenu(event, 'iran');">
+                                 <div class="w3-col s4 tablink">Africa at Persia</div>
+                                     </a>
+                    </div>	
+                    
+                    <div id="medi" class="w3-container menu w3-padding-48 w3-card">
+                        <h4>Mga Akdang Pampanitikang Meditteranean</h4>
+                                   <img src="images/romano.JPG" alt="Mediterranean" style="width:100%" class="w3-hover-opacity"><br>
+                                    <a href="nilalaman.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
+                        </div>
+
+                        <div id="Kanluranin" class="w3-container menu w3-padding-48 w3-card">
+                        <h4>Tuklasin at Palaganapin ang Makulay at Mayamang Panitikan ng mga Bansang Kanluranin</h4>
+                                    <img src="images/kanluran.jpg" alt="Kanluranin" width="auto" height="500" class="w3-hover-opacity"><br>
+                                    <a href="nilalaman.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
+                        </div>  
+
+                        <div id="iran" class="w3-container menu w3-padding-48 w3-card">
+                            <h4>Akdang Pampanitikan ng Africa at Persia (Iran)</h4>
+                                   <img src="images/africa.jpg" alt="AfricaAtPersia" style="width:100%" class="w3-hover-opacity"><br>
+                                    <a href="nilalaman.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
+                        </div> 
+	    </div>
+
+  </div>
+	
+
+<!-- teorya Container style="padding-bottom:32px;" -->
+ 
+<div class="w3-container w3-center w3-padding-64" id="teorya">
+     <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">TEORYANG PAMPANITIKAN</span></h5>
+  
+  <img src="images/teorya.jpg" class="w3-image w3-padding-32" width="500" height="500">
+
+  <div class="w3-content">
+    <p>  Ang Teoryang Pampanitikan ay pananaw o batayang kaisipan na ginagamit sa pagsusuri ng akdang pampanitikan upang maunawaan ang mensahe, anyo, at kahulugan nito 
+    </p>
+    <a href="teorya.html">Tuklasin natin ito!</a><br>
+
+  </div>
+
+  
+  <br>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+ <p>Bb. Marry Grace M. Fortaliza, LPT | patch mafil_v.0.0.1.7</p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 6000); // Change image every 2 seconds
+  }
+  </script>

@@ -18,17 +18,24 @@ h1, h2, h3, h4, h5, h6 {
 <body class="w3-light-grey">
 
 <!-- Navbar (sit on top) -->
+
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.html" class="w3-bar-item w3-button">MemeTikan Mundo ng Meme at Panitikan</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="index.html" class="w3-bar-item w3-button">Bahay</a>
-      <a href="index.html" class="w3-bar-item w3-button">Tungkol sa MemeTikan</a>
-      <a href="index.html" class="w3-bar-item w3-button">Nilalaman</a>
+   <div class="w3-row w3-padding w3-sand">
+    <div class="w3-col s4">
+      <a href="home.html" class="w3-button w3-block">BAHAY</a>
+    </div>
+
+    <div class="w3-col s4">
+     <a href="nilalaman.html" class="w3-button w3-block ">NILALAMAN</a>
+    </div>
+    <div class="w3-col s4">
+      <a href="teorya.html" class="w3-button w3-block">TEORYA</a>
     </div>
   </div>
 </div>
+
+
+
 
 <!-- header -->
 <div class="w3-row-padding w3-padding-64 w3-content"style="max-width:1100px">
@@ -97,23 +104,21 @@ h1, h2, h3, h4, h5, h6 {
  
   <!-- End page content -->
 <script>
-// Script to open and close sidebar
+function myFunction() {
+  var x = document.getElementById("demo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
 }
 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
 }
 
 </script>
