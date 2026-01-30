@@ -76,6 +76,12 @@ img {vertical-align: middle;}
   animation-duration: 1.5s;
 }
 
+a{
+  text-decoration: none;
+}
+
+.liked { color: #ef4444; transform: scale(1.2); transition: all 0.2s; }
+
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
@@ -92,157 +98,316 @@ img {vertical-align: middle;}
 <!-- Links (sit on top) -->
 <div class="w3-top">
   <div class="w3-row w3-padding w3-sand">
-    <div class="w3-col s3">
-      <a href="#bahay" class="w3-button w3-mobile w3-block">BAHAY</a>
+    <div class="w3-col s4">
+      <a href="index.html" class="w3-button w3-mobile w3-block ">MEMETIKAN</a>
     </div>
-    <div class="w3-col s3">
-      <a href="#memetikan" class="w3-button w3-mobile w3-block ">ANG MEMETIKAN</a>
-    </div>
-    <div class="w3-col s3">
+    <div class="w3-col s4">
       <a href="#nilalaman" class="w3-button w3-mobile w3-block ">NILALAMAN</a>
     </div>
-    <div class="w3-col s3">
+    <div class="w3-col s4">
       <a href="#teorya" class="w3-button w3-mobile w3-block">TEORYA</a>
     </div>
   </div>
 </div>
 
-<!-- Header with image -->
-<img class="w3-image" src="images/1.jpg" alt="Memetikan" width="1600" height="1060" id="bahay">
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example 
+<div class="w3-content" style="max-width:1600px">-->
 
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-large">
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>ANG MEMETIKAN:</b></h1>
+    <h6> Mundo ng Meme at Panitikan</h6>
+  </header>
 
-<!-- Ang memetikan -->
-<div class="w3-container" id="memetikan">
-     <h5 class="w3-center w3-padding-64"><span class="w3-xlarge w3-border-dark-grey w3-padding-16">ANG MEMETIKAN: Mundo ng Meme at Panitikan</span></h5>
- <div class="slideshow-container">
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="images/1.jpg" alt="Memetikan" width="1600" height="1060" id="bahay">
+  </header>
 
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="images/covermeme.JPG" style="width:100%">
-      <div class="text">Caption Text</div>
-    </div>
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
     
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="images/pagdating.png" style="width:100%">
-      <div class="text">Caption Two</div>
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large" id="memetikan">
+        <div class="w3-center">
+          <h3>Maligayang Pagdating sa Mundo ng Memes at Panitikan!</h3>
+        </div>
+
+        <div class="w3-justify">
+          <img src="images/cover1.jpg" alt="Memetikan" style="width:100%" class="w3-padding-16">
+          
+          <p><strong>Ang Panitikan</strong> sa buong mundo ay napakamakulay at walang kasing yaman. Halina't buklatin ang mga makabuluhang pahina nito at suyurin ang mga katangi-tanging aral na nakapaloob kasama ang MemeTikan!</p>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-justify">
+
+          <div class="slideshow-container">
+
+            <div class="mySlides fade"> 
+              <img src="images/maincover.jpg" class="w3-image" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="images/pamana/pamana_meme3.jpg" class="w3-image" style="width:100%">
+            </div>
+      
+            <div class="mySlides fade">
+              <img src="images/meme2.JPG" class="w3-image" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+              <img src="images/paruparo/paruparo_meme4.jpg" class="w3-image" style="width:100%">
+            </div>
+            
+          </div>
+
+            <br>
+
+            <div style="text-align:center">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+          <hr>
+          <button id="likeBtn" onclick="toggleLike()" class="w3-left w3-large"><i class='fas fa-heart'></i></button>
+          <p class="w3-right"><button class="w3-button w3-sand" onclick="myFunction('demo1')" id="myBtn"><b>Replies  </b> <span class="w3-tag w3-light-grey" id="commentCounter">0</span></button></p>
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-container" id="commentList">
+                <p>Great blog post! Following</p>
+              </div>
+                <p><input id="commentInput" type="text" placeholder="Add a comment..." class="w3-input w3-padding-16 w3-border"></p>
+                      <p><button onclick="addComment()" class="w3-button w3-sand">Post</button></p>
+          </div>
+           
+        </div>
+      </div>
+      
+
+      <!-- Blog entry -->
+      <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Tungkol sa MemeTikan</h3>
+        </div>
+
+        <div class="w3-justify" id="memetikan">
+          <img src="images/cover2.jpg" alt="MTungkol" style="width:100%" class="w3-padding-16">
+          <p><strong>Maikling Kasaysayan</strong></p>
+          <p>Ang MemeTikan ay isang digital na pantulong materyal para sa pagpapalaganap ng mga akdang pampanitikang sakop ng Panitikang Pandaigdig. Ito ay nilikha para sa mga mambabasang Gen Z. Ang Kulturang digital ay nabanggit na henersyon ang nag-udyok sa manlilikha na iangkop ito para sa mas mabisang pagtalunton ng mga nilalaman ng akdang pampanitikan.</p>
+          
+        </div>
+      </div>
+
+      
+    <!-- END BLOG ENTRIES -->
     </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="images/tungkol.png" style="width:100%">
-      <div class="text">Caption Three</div>
+
+    <!-- About/Information menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-card w3-white w3-margin w3-padding" id="nilalaman">
+        <img src="images/meme3.JPG" alt="Mediterranean" style="width:100%" class="w3-image">
+        <div class="w3-container">
+          <h5>NILALAMAN</h5>
+          <ul class="w3-ul w3-hoverable w3-sand">
+            <li class="w3-padding-16">
+              <a href="medi.html">
+                <img src="images/romano.JPG" alt="Mediterranean " style="width:50px" class="w3-left w3-margin-right">
+                <span class="w3-large">Akdang Mediterranean </span>
+              <br>
+                <span>(Romano, Griyego, Pransya)</span>
+              </a>
+            </li>
+            <li class="w3-padding-16">
+             <a href="kanluranin.html">
+              <img src="images/kanluran.jpg" alt="Kanluranin" style="width:50px" class="w3-left w3-margin-right">
+      
+              <span class="w3-large">Tuklasin at Palaganapin ang Makulay at Mayamang Panitikan ng mga  </span>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Bansang Kanluranin</span>
+             </a> 
+            </li>
+            <li class="w3-padding-16">
+              <a href="persia.html">
+                <img src="images/africa.jpg" alt="Africa at Persia " style="width:50px" class="w3-left w3-margin-right">
+              <span class="w3-large">Akdang Pampanitikan ng</span>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Africa at Persia(Iran)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Teorya -->
+      <div class="w3-card w3-white w3-margin w3-hoverable w3-padding" id="teorya">
+        <img src="images/covermeme.JPG" alt="Teorya" style="width:100%" class="w3-image">
+        <div class="w3-container w3-sand">
+          <h4>TEORYANG PAMPANITIKAN </h4>
+          <p>Ang Teoryang Pampanitikan ay pananaw o batayang kaisipan na ginagamit sa pagsusuri ng akdang pampanitikan upang maunawaan ang mensahe, anyo, at kahulugan nito </p>
+          <a href="teorya.html" class="w3-button w3-light-grey">Tuklasin natin ito!</a><br><br>
+        </div>
+      </div>
+      <hr>
+
+    <!-- END About/Intro Menu -->
     </div>
-    
-  </div>
-  
-  <br>
 
-  <div style="text-align:center">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
+  <!-- END GRID -->
   </div>
 
-
-
-</div>
-
-<!-- Nilalaman Container -->
-<div class="w3-container w3-padding-64" id="nilalaman">
-  <h5 class="w3-center w3-padding-48"><span class="w3-xlarge w3-border-dark-grey w3-padding-16">NILALAMAN</span></h5>
-				
-		<div class="w3-col l6 w3-padding-large">
-			  <img src="images/meme3.JPG" class="w3-round w3-image" alt="Nilalaman" width="600" height="300">
-		</div>
-		
-		<div class="w3-col l6 w3-padding-large">
-                    <div class="w3-row w3-center w3-card w3-padding">
-                            <a href="javascript:void(0)" onclick="openMenu(event, 'medi');" id="myLink">
-                                <div class="w3-col s4 tablink">Mediterranean</div>
-                            </a>
-                            <a href="javascript:void(0)" onclick="openMenu(event, 'Kanluranin');">
-                                <div class="w3-col s4 tablink">Bansang Kanluranin</div>
-                             </a>
-
-                              <a href="javascript:void(0)" onclick="openMenu(event, 'iran');">
-                                 <div class="w3-col s4 tablink">Africa at Persia</div>
-                                     </a>
-                    </div>	
-                    
-                    <div id="medi" class="w3-container menu w3-padding-48 w3-card">
-                        <h4>Mga Akdang Pampanitikang Meditteranean</h4>
-                                   <img src="images/romano.JPG" alt="Mediterranean" style="width:100%" class="w3-hover-opacity"><br><br>
-                                    <a href="medi.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
-                        </div>
-
-                        <div id="Kanluranin" class="w3-container menu w3-padding-48 w3-card">
-                        <h4>Tuklasin at Palaganapin ang Makulay at Mayamang Panitikan ng mga Bansang Kanluranin</h4>
-                                    <img src="images/kanluran.jpg" alt="Kanluranin" width="auto" height="500" class="w3-hover-opacity w3-image"><br><br>
-                                    <a href="kanluranin.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
-                        </div>  
-
-                        <div id="iran" class="w3-container menu w3-padding-48 w3-card">
-                            <h4>Akdang Pampanitikan ng Africa at Persia (Iran)</h4>
-                                   <img src="images/africa.jpg" alt="AfricaAtPersia" style="width:100%" class="w3-hover-opacity"><br><br>
-                                    <a href="persia.html" class="w3-button w3-white w3-border w3-round-large">Alamin</a><br>
-                        </div> 
-	    </div>
-
-  </div>
-	
-
-<!-- teorya Container style="padding-bottom:32px;" -->
- 
-<div class="w3-container w3-center w3-padding-64" id="teorya">
-     <h5 class="w3-center w3-padding-48"><span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">TEORYANG PAMPANITIKAN</span></h5>
-  
-  <img src="images/teorya.jpg" class="w3-image w3-padding-32" width="500" height="500">
-
-  <div class="w3-content">
-    <p>  Ang Teoryang Pampanitikan ay pananaw o batayang kaisipan na ginagamit sa pagsusuri ng akdang pampanitikan upang maunawaan ang mensahe, anyo, at kahulugan nito 
-    </p>
-    <a href="teorya.html">Tuklasin natin ito!</a><br>
-
-  </div>
-
-  
-  <br>
-</div>
-
-<!-- End page content -->
-</div>
+<!-- END w3-content 
+</div>-->
 
 <!-- Footer -->
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
- <p>Bb. Marry Grace M. Fortaliza, LPT | patch mafil_v.0.1.7.d</p>
+ <p>Bb. Marry Grace M. Fortaliza, LPT | patch mafil_v.0.1.9.</p>
 </footer>
-
-<script>
-// Tabbed Menu
-function openMenu(evt, menuName) {
-  var i, x, tablinks;
-  x = document.getElementsByClassName("menu");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < x.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-  }
-  document.getElementById(menuName).style.display = "block";
-  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-}
-document.getElementById("myLink").click();
-</script>
 
 </body>
 </html>
 
 
 <script>
+
+
+// Example of the "Post" function with the counter added
+function addComment() {
+    const input = document.getElementById('commentInput');
+    if (!input.value.trim()) return;
+
+    // Get current comments or start fresh
+    let comments = JSON.parse(localStorage.getItem('vibe_comments')) || [];
+    
+    // Add new comment
+    comments.push({ user: 'you', text: input.value });
+    
+    // Save back to Local Storage
+    localStorage.setItem('vibe_comments', JSON.stringify(comments));
+    
+    // CLEAR input and REFRESH the UI
+    input.value = '';
+    renderComments(); // Redraws the list
+    updateLocalCount(); // Updates the number (e.g., "5 replies")
+}
+
+
+  // --- Initialization | reaction ---
+  let likes = JSON.parse(localStorage.getItem('vibe_likes')) || false;
+        let reactions = JSON.parse(localStorage.getItem('vibe_reactions')) || {'demo1': 0, '🙌': 0, '✨': 0};
+        let comments = JSON.parse(localStorage.getItem('vibe_comments')) || [
+         {user: 'SirJe:', text: ' Magandang Kagamitan sa Pagtuturo at Pag-aaral. Napakahusay!!!'}
+        ];
+
+        function init() {
+            renderLikes();
+            renderReactions();
+            renderComments();
+        }
+
+        // --- Like Logic ---
+        function toggleLike() {
+            likes = !likes;
+            localStorage.setItem('vibe_likes', JSON.stringify(likes));
+            renderLikes();
+        }
+
+        function renderLikes() {
+            const btn = document.getElementById('likeBtn');
+            btn.innerHTML = likes ? '❤️' : '🤍';
+            btn.className = likes ? 'liked text-2xl' : 'text-2xl';
+        }
+
+        // --- Reaction Logic ---
+        function react(emoji) {
+            reactions[emoji]++;
+            localStorage.setItem('vibe_reactions', JSON.stringify(reactions));
+            renderReactions();
+        }
+
+        function renderReactions() {
+            for (const emoji in reactions) {
+                const el = document.getElementById(`count-${emoji}`);
+                if (el) el.innerText = reactions[emoji];
+            }
+        }
+
+        // --- Comment Logic ---
+           function updateLocalCount() {
+                // 1. Get the data from Local Storage
+                const localData = localStorage.getItem('vibe_comments');
+                
+                // 2. If it exists, parse it; otherwise, use an empty array
+                const comments = localData ? JSON.parse(localData) : [];
+                
+                // 3. Get the length
+                const count = comments.length;
+                
+                // 4. Update the UI
+                const counterEl = document.getElementById('commentCounter');
+                if (counterEl) {
+                    counterEl.innerText = count === 1 ? "1 reply" : `${count} replies`;
+                }
+                }
+
+                function refreshReplyCount() {
+                // Look at Local Storage
+                const storedComments = localStorage.getItem('vibe_comments');
+                
+                // If it exists, parse it; otherwise, use 0
+                const count = storedComments ? JSON.parse(storedComments).length : 0;
+                
+                // Inject it into the HTML
+                const counterEl = document.getElementById('commentCounter');
+                if (counterEl) {
+                    counterEl.innerText = count === 1 ? "1 reply" : `${count} replies`;
+                }
+            }
+
+
+            refreshReplyCount();
+        function addComment() {
+            const input = document.getElementById('commentInput');
+            if (!input.value.trim()) return;
+
+            //let comments = JSON.parse(localStorage.getItem('vibe_comments')) || [];
+
+            comments.push({ user: 'you:', text: input.value });
+            localStorage.setItem('vibe_comments', JSON.stringify(comments));
+            input.value = '';
+            renderComments();
+            updateLocalCount(); // Updates the number (e.g., "5 replies")
+            refreshReplyCount(); // Updates the number
+        }
+
+        function renderComments() {
+            const container = document.getElementById('commentList');
+            container.innerHTML = comments.map(c => `
+                <div class="w3-block">
+                    <span class="font-bold mr-2">${c.user}</span>
+                    <span class="text-gray-300">${c.text}</span>
+                </div>
+            `).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+        
+
+        init();
+
+
+
+//Slideshow
   let slideIndex = 0;
   showSlides();
   
@@ -260,6 +425,25 @@ document.getElementById("myLink").click();
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 6000); // Change image every 2 seconds
+    setTimeout(showSlides, 4000); // Change image every 2 seconds
   }
+
+
+
+
+  // Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "✓ Liked";
+}
   </script>
